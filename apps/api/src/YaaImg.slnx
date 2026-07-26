@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="YaaImg.Api/YaaImg.Api.csproj" />
+  <Project Path="YaaImg.Application/YaaImg.Application.csproj" />
+  <Project Path="YaaImg.Contracts/YaaImg.Contracts.csproj" />
+  <Project Path="YaaImg.Domain/YaaImg.Domain.csproj" />
+  <Project Path="YaaImg.Infrastructure/YaaImg.Infrastructure.csproj" />
+</Solution>

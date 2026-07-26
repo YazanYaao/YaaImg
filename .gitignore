@@ -1,0 +1,236 @@
+# ============================================================================
+# YaaImg .gitignore
+# Monorepo: Next.js 14 + ASP.NET Core .NET 10 + Supabase
+# ============================================================================
+
+# ────────────────────────────────────────────────────────────────────────────
+# Environment & Secrets
+# ────────────────────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+
+# ────────────────────────────────────────────────────────────────────────────
+# Node.js / Next.js (apps/web)
+# ────────────────────────────────────────────────────────────────────────────
+node_modules/
+.next/
+out/
+.turbo/
+.vercel/
+.cache/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+next-env.d.ts
+
+# Package manager lockfiles (keep the one you use, ignore others)
+# Uncomment the ones you do NOT use:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Next.js build & export
+apps/web/.next/
+apps/web/out/
+apps/web/node_modules/
+
+# Storybook (if added later)
+storybook-static/
+
+# ────────────────────────────────────────────────────────────────────────────
+# .NET / ASP.NET Core (apps/api)
+# ────────────────────────────────────────────────────────────────────────────
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+
+# .NET tools
+.dotnet/
+tools/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.manifest
+*.cache
+
+# MSBuild
+*.log
+msbuild.wrn
+msbuild.err
+
+# Publish output
+publish/
+
+# NuGet v3 local cache
+**/packages/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Windows Store app
+AppPackages/
+BundleArtifacts/
+
+# Local secrets (ASP.NET user secrets)
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json.example
+!appsettings.Production.json.example
+
+# ────────────────────────────────────────────────────────────────────────────
+# Supabase
+# ────────────────────────────────────────────────────────────────────────────
+supabase/.branches/
+supabase/.temp/
+
+# ────────────────────────────────────────────────────────────────────────────
+# Docker
+# ────────────────────────────────────────────────────────────────────────────
+docker/*.override.yml
+docker/*.override.yaml
+docker/volumes/
+
+# ────────────────────────────────────────────────────────────────────────────
+# Testing & Coverage
+# ────────────────────────────────────────────────────────────────────────────
+coverage/
+*.lcov
+TestResults/
+test-results/
+tests/**/TestResults/
+*.trx
+*.coveragexml
+playwright-report/
+test-results/
+.nyc_output/
+
+# ────────────────────────────────────────────────────────────────────────────
+# IDEs & Editors
+# ────────────────────────────────────────────────────────────────────────────
+
+# Visual Studio
+.vs/
+*.sln.ide/
+launchSettings.json
+
+# Visual Studio Code
+# Keep .vscode/settings.json and extensions.json for shared config
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# JetBrains Rider / IntelliJ
+.idea/
+*.sln.iml
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+
+# ────────────────────────────────────────────────────────────────────────────
+# Operating System
+# ────────────────────────────────────────────────────────────────────────────
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+.directory
+.Trash-*
+
+# ────────────────────────────────────────────────────────────────────────────
+# Misc
+# ────────────────────────────────────────────────────────────────────────────
+
+# Generated API clients (uncomment if you regenerate in CI)
+# apps/web/lib/api/generated/
+
+# Terraform / IaC state (if added later)
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Local scripts output
+scripts/*.local.*

@@ -1,0 +1,6 @@
+@YaaImg.Api_HostAddress = http://localhost:5298
+
+GET {{YaaImg.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
