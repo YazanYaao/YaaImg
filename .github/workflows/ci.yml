@@ -1,0 +1,56 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend-ci:
+    name: Backend Quality Gate (.NET 10)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore NuGet packages
+        run: dotnet restore apps/api/src/YaaImg.slnx
+
+      - name: Build Backend Solution (Release)
+        run: dotnet build apps/api/src/YaaImg.slnx --configuration Release --no-restore
+
+  frontend-ci:
+    name: Frontend Quality Gate (Next.js 14)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js Production Bundle
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: "https://mock-ci-project.supabase.co"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: "mock-ci-anon-key-placeholder-for-build-validation"
+        run: npm run build

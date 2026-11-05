@@ -1,11 +1,40 @@
-node_modules/
-.git/
-Dockerfile*
 .dockerignore
-*.log*
-.env*
-coverage/
-apps/web/.next/
-apps/web/out/
-apps/api/**/bin/
-apps/api/**/obj/
+# ============================================================================
+# YaaImg Docker Ignore
+# ============================================================================
+
+# Git
+.git
+.gitignore
+
+# Node
+**/node_modules
+**/.next
+**/out
+
+# .NET
+**/bin
+**/obj
+
+# IDE
+.vscode
+.idea
+.vs
+
+# Docs & Specs (not needed in Docker images)
+docs/
+specs/
+.specify/
+
+# Environment files (injected via docker-compose)
+.env
+.env.*
+!.env.example
+
+# Supabase local
+supabase/.branches
+supabase/.temp
+
+# OS
+.DS_Store
+Thumbs.db

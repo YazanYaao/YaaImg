@@ -4,6 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);NU1902;NU1903</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,7 @@
     <ProjectReference Include="..\YaaImg.Application\YaaImg.Application.csproj" />
     <ProjectReference Include="..\YaaImg.Infrastructure\YaaImg.Infrastructure.csproj" />
     <ProjectReference Include="..\YaaImg.Contracts\YaaImg.Contracts.csproj" />
+    <ProjectReference Include="..\YaaImg.Domain\YaaImg.Domain.csproj" />
   </ItemGroup>
 
 </Project>

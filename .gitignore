@@ -234,3 +234,16 @@ $RECYCLE.BIN/
 
 # Local scripts output
 scripts/*.local.*
+
+# ────────────────────────────────────────────────────────────────────────────
+# Internal Spec-Kit & Agent Artifacts (Isolated from public repository)
+# ────────────────────────────────────────────────────────────────────────────
+specs/
+.specify/
+.gemini/
+.user_uploaded/
+brain/
+*.transcript.jsonl
+appsettings.*.local.json
+appsettings.Development.local.json
+
